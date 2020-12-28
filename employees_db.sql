@@ -3,6 +3,8 @@ CREATE DATABASE employees_db;
 
 USE employees_db;
 
+-- Creating our 3 tables --
+
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
@@ -25,6 +27,8 @@ CREATE TABLE employee (
   manager_id INT, 
   PRIMARY KEY (id)
 );
+
+-- Inserting default values into tables --
 
 INSERT INTO department (name)
 VALUES ("Sales"), ("Customer Service"), ("Management"), ("Legal"), ("Accounting");

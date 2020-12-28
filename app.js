@@ -1,3 +1,5 @@
+// setting "variables" ///
+
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 const { printTable } = require('console-table-printer');
@@ -5,6 +7,8 @@ let roles;
 let departments;
 let managers;
 let employees;
+
+// Connecting to our Database //
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -22,6 +26,8 @@ var connection = mysql.createConnection({
     getManagers();
     getEmployees();
   });
+
+  // WHAT would you like to do? Prompts that start when app.js loads //
 
   start = () => {
     inquirer
@@ -85,6 +91,8 @@ getRoles = () => {
     })
   };
 
+// What would you like to ADD? ///
+
   addSomething = () => {
     inquirer.prompt([
       {
@@ -118,6 +126,8 @@ getRoles = () => {
     })
   };
   
+  // add DEPARTMENT, What Department? //
+
   addDepartment = () => {
     inquirer.prompt([
       {
@@ -174,6 +184,8 @@ getRoles = () => {
     })
   };
   
+  // Add EMPLOYEE? Tell us about them.
+
   addEmployee = () => {
     getRoles();
     getManagers();
@@ -243,6 +255,8 @@ getRoles = () => {
     })
   };
 
+// VIEW something from the Database //
+
   viewSomething = () => {
     inquirer.prompt([
       {
@@ -308,6 +322,8 @@ getRoles = () => {
       start();
     });
   };
+
+// UPDATE an existing record in the DB //
 
   updateSomething = () => {
     inquirer.prompt([
@@ -458,6 +474,8 @@ getRoles = () => {
     })
   };
   
+// DELETE existing records ////
+
   deleteSomething = () => {
     inquirer.prompt([
       {
